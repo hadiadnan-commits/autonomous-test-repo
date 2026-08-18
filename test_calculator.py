@@ -1,3 +1,4 @@
+from calculator import divide
 from calculator import add
 from calculator import subtract
 from calculator import multiply
@@ -25,3 +26,12 @@ def test_multiply_negative_number():
 
 def test_multiply_two_negative_numbers():
     assert multiply(-3, -4) == 12
+
+def test_divide_positive_numbers():
+    assert divide(12, 3) == 4
+
+
+def test_divide_by_zero():
+    import pytest
+    with pytest.raises(ZeroDivisionError):
+        divide(10, 0)
